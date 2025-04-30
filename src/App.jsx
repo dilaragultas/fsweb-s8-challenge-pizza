@@ -9,12 +9,7 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://github.com/Workintech/fsweb-s7-challenge-pizza" target="_blank">
-          <img src={workintech} className="logo" alt="Workintech logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      
       </div>
       <h1>Workintech + 🍕</h1>
       <div className="card">
