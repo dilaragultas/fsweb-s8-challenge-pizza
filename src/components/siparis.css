@@ -43,6 +43,12 @@ width: 25vw;
     margin: 3rem auto;
 }
 
+.cumle{
+    margin-bottom: 0;
+    font-size:smaller;
+    color: #5F5F5F;
+    font-weight: 400;
+}
 .malzemeler{
     display: flex;
     flex-direction: row;

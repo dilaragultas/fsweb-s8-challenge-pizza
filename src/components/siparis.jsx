@@ -165,7 +165,8 @@ export default function SiparisFormu() {
           </div>
 
           <h5>Ek Malzemeler</h5>
-          <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
+          <p className="cumle">En az 4 malzeme seçilmelidir!</p>
+          <p className="cumle">En fazla 10 malzeme seçebilirsiniz. 5₺</p>
           <div className="malzemeler">
             {ekMalzemeListesi.map((elm) => {
               return (
@@ -205,7 +206,7 @@ export default function SiparisFormu() {
               <h5>Sipariş Toplamı</h5>
               <p>Seçimler: {ekMalzemeTutari}₺</p>
               <p style={{ color: 'red' }}>Toplam: {siparisTutari}₺</p>
-              <Button type="submit" color="warning" ><strong>Sipariş Ver</strong></Button>
+              <Button type="submit" color="warning" disabled={ekMalzeme.length <4? true : false}><strong>Sipariş Ver</strong></Button>
 
 
             </div>

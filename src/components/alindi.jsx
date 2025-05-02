@@ -16,16 +16,16 @@ export default function Alindi() {
     }
     return (
         <div className="logolu">
-
+            <img className="img" src='./images/iteration-1-images/logo.svg'/>
             <div className="baslik">
                 <p className="italik">lezzetin yolda</p>
                 <h1 className="alindiBilgisi">SİPARİŞ ALINDI</h1>
             </div>
             <p className="pizzaAdi">Position Absolute Acı Pizza</p>
             <div className="detaylar">
-                <p>Boyut:<span className="bold">{data.boyut}</span></p>
-                <p>Hamur:<span className="bold">{data.hamur}</span></p>
-                <p>Ek Malzemeler:<span className="bold">{data.ekMalzeme.join(',')}</span></p>
+                <p className="kutu">Boyut:<span className="bold">{data.boyut}</span></p>
+                <p className="kutu">Hamur:<span className="bold">{data.hamur}</span></p>
+                <p className="kutu">Ek Malzemeler: <span className="bold">{data.ekMalzeme.join(',')}</span></p>
             </div>
 
             <div className="sonKisim">
