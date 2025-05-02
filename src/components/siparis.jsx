@@ -1,59 +1,183 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { Form, FormGroup, Input, Label } from "reactstrap";
+import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import SiparisHeader from "./siparisheader";
+import "./siparis.css"
 
- const ekMalzemeListesi = [
-    "Pepperoni", "Sosis", "Kanada Jambonu", "Tavuk Izgara",
-    "Soğan", "Domates", "Mısır", "Sucuk", "Jalepeno",
-    "Sarımsak", "Biber", "Sucuk", "Ananas", "Kabak"
-  ]
+const ekMalzemeListesi = [
+  "Pepperoni", "Sosis", "Kanada Jambonu", "Tavuk Izgara",
+  "Soğan", "Domates", "Mısır", "Sucuk", "Jalepeno",
+  "Sarımsak", "Biber", "Salam", "Ananas", "Kabak"
+]
 
-  const pizzaFiyati = 85.50
-  const urunFiyat = 5
+const pizzaFiyati = 85.50
+const urunFiyat = 5
 
 export default function SiparisFormu() {
 
-    const [boyut, setBoyut] = useState('')
-    const [hamur, setHamur] = useState('')
-    const [ekMalzeme, setEkMalzeme] = useState([])
-    const [not, setNot] = useState('')
-    const [pizzaAdedi, setPizzaAdedi] = useState(1)
+  const [boyut, setBoyut] = useState('')
+  const [hamur, setHamur] = useState('')
+  const [ekMalzeme, setEkMalzeme] = useState([])
+  const [not, setNot] = useState('')
+  const [pizzaAdedi, setPizzaAdedi] = useState(1)
 
-    const handleChange = () => {
-        //Buraya ek malzeme secildikten sonra arraye atilacak urunler gelecek yazmayi unutma!
+  const handleChange = (event) => {
+    const { value, checked } = event.target
+    if (checked && ekMalzeme.length < 10) {
+      setEkMalzeme([...ekMalzeme, value])
+    } else if (!checked) {
+      setEkMalzeme(ekMalzeme.filter((elm) => elm !== value))
     }
+  }
 
-    const ekMalzemeTutari = ekMalzeme.length * urunFiyat
-    const siparisTutari = (ekMalzemeTutari + pizzaFiyati) * pizzaAdedi
+  const handleAzalt = (event) => {
+    event.preventDefault()
+    if (pizzaAdedi > 1) {
+      setPizzaAdedi(pizzaAdedi - 1)
+    }
+  }
+  const handleArttir = (event) => {
+    event.preventDefault()
+    setPizzaAdedi(pizzaAdedi + 1)
+  }
 
-    return (
-      <div>
-            <Link to="/" exact>Anasayfa</Link>
-            <div>
-                <h1>Position Absolute Acı Pizza</h1>
-                <p className="pizzaFiyati">Fiyat: {pizzaFiyati}₺ </p>
-                <p className="yildiz">4.9</p>
-                <p className="yorum">(200)</p>
-                <p> Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre.
+
+  const ekMalzemeTutari = ekMalzeme.length * urunFiyat
+  const siparisTutari = (ekMalzemeTutari + pizzaFiyati) * pizzaAdedi
+
+  return (
+    <>
+      <SiparisHeader />
+      <div className="formSayfasi">
+
+
+
+        <h5 className="title">Position Absolute Acı Pizza</h5>
+        <div className="ikili">
+          <h3><strong>{pizzaFiyati}₺ </strong></h3>
+          <div className="yildizveyorum">
+            <p>4.9</p>
+            <p>(200)</p>
+          </div>
+        </div>
+        <p className="ilkMetin"> Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre.
           Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak
           odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı
           hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.</p>
-            </div>
-            <Form>
-            <FormGroup>
-                <Label for="exampleEmail">
-                Email
-                </Label>
-                <Input
-                id="exampleEmail"
-                name="email"
-                placeholder="with a placeholder"
-                type="email"
-                />
-            </FormGroup>
-            </Form>
-    
-        </div>
 
-    )
+        <Form>
+          <div className="radio">
+            <FormGroup tag="fieldset">
+              <legend>
+                <h5>Boyut Seç <span style={{ color: 'red' }}>*</span></h5>
+              </legend>
+              <FormGroup check>
+                <Input
+                  name="radio1"
+                  type="radio"
+                />
+                {' '}
+                <Label check>
+                  Küçük
+                </Label>
+              </FormGroup>
+              <FormGroup check>
+                <Input
+                  name="radio1"
+                  type="radio"
+                />
+                {' '}
+                <Label check>
+                  Orta
+                </Label>
+              </FormGroup>
+              <FormGroup check>
+                <Input
+                  name="radio1"
+                  type="radio"
+                />
+                {' '}
+                <Label check>
+                  Büyük
+                </Label>
+              </FormGroup>
+            </FormGroup>
+            <FormGroup>
+              <Label for="exampleSelect">
+                <h5>Hamur Seç <span style={{ color: 'red' }}>*</span></h5>
+              </Label>
+              <Input
+                id="exampleSelect"
+                name="select"
+                type="select"
+              >
+                <option disabled>
+                  Hamur Kalınlığı
+                </option>
+                <option>
+                 Süpper İnce
+                </option>
+                <option>
+                  İnce
+                </option>
+                <option>
+                  Orta
+                </option>
+                <option>
+                  Kalın
+                </option>
+              </Input>
+            </FormGroup>
+
+          </div>
+
+          <h5>Ek Malzemeler</h5>
+          <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
+          <div className="malzemeler">
+            {ekMalzemeListesi.map((elm) => {
+              return (
+                <FormGroup
+                  check
+                  inline
+                >
+
+                  <Label className="tektek" check>
+                    <Input type="checkbox" value={elm} onChange={handleChange} disabled={ekMalzeme.length >= 10 && !ekMalzeme.includes(elm)} checked={ekMalzeme.includes(elm)} />
+                    {elm}
+                  </Label>
+                </FormGroup>
+              )
+            })}
+          </div>
+
+          <FormGroup>
+            <Label for="exampleText">
+              <h5>Sipariş Notu</h5>
+            </Label>
+            <Input
+              id="exampleText"
+              name="text"
+              type="textarea"
+              placeholder="Siparişine eklemek istediğin bir not var mı?"
+            />
+          </FormGroup>
+
+          <div className="sonikili">
+            <div className="artazal">
+              <Button className="butonlar" color="warning" onClick={handleAzalt}>-</Button>
+              <p className="adet">{pizzaAdedi}</p>
+              <Button className="butonlar" color="warning" onClick={handleArttir}>+</Button>
+            </div>
+            <div className="toplam">
+              <h5>Sipariş Toplamı</h5>
+              <p>Seçimler: {ekMalzemeTutari}₺</p>
+              <p style={{ color: 'red' }}>Toplam: {siparisTutari}₺</p>
+              <Button color="warning">Sipariş Ver</Button>
+
+            </div>
+          </div>
+        </Form>
+
+      </div>
+    </>
+  )
 }

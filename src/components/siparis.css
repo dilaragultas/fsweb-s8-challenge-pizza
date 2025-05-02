@@ -1,0 +1,107 @@
+
+
+.formSayfasi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+.title{
+    font-family: 'Barlow';
+    font-weight: 600;
+    width: 25vw;
+    text-align: left;
+    margin: 2rem auto;
+}
+.ikili{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+}
+
+.yildizveyorum{
+    display: flex;
+    font-family: 'Barlow';  
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100px;
+   
+}
+
+.ilkMetin{
+width: 25vw;
+}
+
+.radio{
+    display: flex;
+    flex-direction: row;
+    width: 25vw;
+    justify-content: space-between;
+    margin: 3rem auto;
+}
+
+.malzemeler{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 25vw;
+    margin: 3rem auto;
+}
+.tektek{
+    display: flex;
+    flex-direction: row;
+    width: 110px;
+    gap: 15px;
+    font-family: 'Barlow';
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.sonikili{
+    display: flex;
+    flex-direction: row;
+    width: 25vw;
+    justify-content: space-around;
+    
+    
+}
+.adet{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: "Barlow";
+    font-weight: 600;
+}
+.butonlar{
+    width: 50px;
+    height: 50px;
+}
+.artazal{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    align-items: center;
+    text-align: center;
+    width: 10vw;
+}
+.toplam{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem auto;
+    width: 15vw;
+    border: 1px solid #5F5F5F;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Barlow';
+    font-weight: 700;
+
+}
