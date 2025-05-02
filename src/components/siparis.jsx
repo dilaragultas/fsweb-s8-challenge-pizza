@@ -12,16 +12,13 @@ const ekMalzemeListesi = [
   "Sarımsak", "Biber", "Salam", "Ananas", "Kabak"
 ]
 
-const pizzaFiyati = 85.50
-const urunFiyat = 5
 
-export default function SiparisFormu() {
+
+export default function SiparisFormu( {pizzaAdedi,setPizzaAdedi, ekMalzeme, setEkMalzeme, siparisTutari, ekMalzemeTutari, pizzaFiyati}) {
 
   const [boyut, setBoyut] = useState('')
   const [hamur, setHamur] = useState('')
-  const [ekMalzeme, setEkMalzeme] = useState([])
   const [not, setNot] = useState('')
-  const [pizzaAdedi, setPizzaAdedi] = useState(1)
   const [responseData, setResponseData] = useState(null);
   const history = useHistory()
 
@@ -33,6 +30,15 @@ export default function SiparisFormu() {
       setEkMalzeme(ekMalzeme.filter((elm) => elm !== value))
     }
   }
+  const handleChangeiki = (event) => {
+    const { value } = event.target
+    setBoyut(value)
+}
+
+const handleChangeuc = (event) => {
+    const { value } = event.target
+    setHamur(value)
+}
 
   const handleAzalt = (event) => {
     event.preventDefault()
@@ -44,10 +50,6 @@ export default function SiparisFormu() {
     event.preventDefault()
     setPizzaAdedi(pizzaAdedi + 1)
   }
-
-
-  const ekMalzemeTutari = ekMalzeme.length * urunFiyat
-  const siparisTutari = (ekMalzemeTutari + pizzaFiyati) * pizzaAdedi
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -87,7 +89,7 @@ export default function SiparisFormu() {
       <div className="formSayfasi">
         <h5 className="title">Position Absolute Acı Pizza</h5>
         <div className="ikili">
-          <h3><strong>{pizzaFiyati}₺ </strong></h3>
+          <h3><strong>85.50₺ </strong></h3>
           <div className="yildizveyorum">
             <p>4.9</p>
             <p>(200)</p>
@@ -108,6 +110,9 @@ export default function SiparisFormu() {
                 <Input
                   name="radio1"
                   type="radio"
+                  value='Küçük'
+                  checked={boyut==='Küçük'}
+                  onChange={handleChangeiki}
                 />
                 {' '}
                 <Label check>
@@ -118,6 +123,9 @@ export default function SiparisFormu() {
                 <Input
                   name="radio1"
                   type="radio"
+                  value='Orta'
+                  checked={boyut==='Orta'}
+                  onChange={handleChangeiki}
                 />
                 {' '}
                 <Label check>
@@ -128,6 +136,9 @@ export default function SiparisFormu() {
                 <Input
                   name="radio1"
                   type="radio"
+                  value='Büyük'
+                  checked={boyut==='Büyük'}
+                  onChange={handleChangeiki}
                 />
                 {' '}
                 <Label check>
@@ -143,20 +154,22 @@ export default function SiparisFormu() {
                 id="exampleSelect"
                 name="select"
                 type="select"
+                onChange={handleChangeuc}
+                defaultValue=''
               >
-                <option disabled>
+                <option disabled value='' hidden>
                   Hamur Kalınlığı
                 </option>
-                <option>
+                <option value='Süpper İnce'>
                   Süpper İnce
                 </option>
-                <option>
+                <option value='İnce'>
                   İnce
                 </option>
-                <option>
+                <option value='Orta'>
                   Orta
                 </option>
-                <option>
+                <option value='Kalın'>
                   Kalın
                 </option>
               </Input>
@@ -203,11 +216,16 @@ export default function SiparisFormu() {
               <Button className="butonlar" color="warning" onClick={handleArttir}>+</Button>
             </div>
             <div className="toplam">
-              <h5>Sipariş Toplamı</h5>
-              <p>Seçimler: {ekMalzemeTutari}₺</p>
-              <p style={{ color: 'red' }}>Toplam: {siparisTutari}₺</p>
-              <Button type="submit" color="warning" disabled={ekMalzeme.length <4? true : false}><strong>Sipariş Ver</strong></Button>
-
+              <h5 className="siparisToplami">Sipariş Toplamı</h5>
+              <div className="secimler">
+              <p>Seçimler:</p>
+              <p>{ekMalzemeTutari}₺</p>
+              </div>
+              <div className="tutar">
+              <p>Toplam:</p>
+              <p>{siparisTutari}₺</p>
+              </div>
+              <Button className="siparisbutonu" type="submit" color="warning" disabled={ekMalzeme.length <4 || boyut === '' || hamur === ''? true : false}><strong>Sipariş Ver</strong></Button>
 
             </div>
           </div>

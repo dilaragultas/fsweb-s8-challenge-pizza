@@ -2,7 +2,7 @@ import React from "react"
 import './alindi.css'
 import { useLocation, Link } from "react-router-dom";
 
-export default function Alindi() {
+export default function Alindi({ekMalzemeTutari, siparisTutari}) {
     const location = useLocation();
     const data = location.state;
 
@@ -23,15 +23,21 @@ export default function Alindi() {
             </div>
             <p className="pizzaAdi">Position Absolute Acı Pizza</p>
             <div className="detaylar">
-                <p className="kutu">Boyut:<span className="bold">{data.boyut}</span></p>
-                <p className="kutu">Hamur:<span className="bold">{data.hamur}</span></p>
-                <p className="kutu">Ek Malzemeler: <span className="bold">{data.ekMalzeme.join(',')}</span></p>
+                <p className="kutu">Boyut: <strong>{data.boyut}</strong></p>
+                <p className="kutu">Hamur: <strong>{data.hamur}</strong></p>
+                <p className="kutu">Ek Malzemeler: <strong>{data.ekMalzeme.join(',')}</strong></p>
             </div>
 
             <div className="sonKisim">
-                <h5>Sipariş Toplamı</h5>
-                <p>Seçimler:₺</p>
-                <p>Toplam:₺</p>
+                <h6>Sipariş Toplamı</h6>
+                <div className="secimler2">
+                <p className="secimlerp">Seçimler:</p>
+                <p className="secimlerp">{ekMalzemeTutari}₺</p>
+                </div>
+                <div className="toplam2">
+                <p className="toplamp">Toplam:</p>
+                <p className="toplamp">{siparisTutari}₺</p>
+                </div>
             </div>
 
 

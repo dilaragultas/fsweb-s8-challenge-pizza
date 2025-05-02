@@ -99,9 +99,14 @@ width: 25vw;
     text-align: center;
     width: 10vw;
 }
+.siparisToplami{
+    padding-top: 10px;
+    font-family: 'Barlow';
+}
 .toplam{
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 2rem auto;
     width: 15vw;
     border: 1px solid lightgray;
@@ -110,5 +115,26 @@ width: 25vw;
     font-family: 'Barlow';
     font-weight: 700;
     margin-bottom: 40px;
-
+    background-color: #FAF7F2;
+}
+.secimler{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 160px;
+    font-weight: 500;
+    font-family: 'Barlow';
+    color: #5F5F5F
+}
+.tutar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 160px;
+    font-weight: 500;
+    font-family: 'Barlow';
+    color: #CE2829
+}
+.siparisbutonu{
+    width: 230px;
 }
