@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import SiparisHeader from "./siparisheader";
 import "./siparis.css"
+import axios from "axios";
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import Alindi from "./alindi";
 
 const ekMalzemeListesi = [
   "Pepperoni", "Sosis", "Kanada Jambonu", "Tavuk Izgara",
@@ -19,6 +22,8 @@ export default function SiparisFormu() {
   const [ekMalzeme, setEkMalzeme] = useState([])
   const [not, setNot] = useState('')
   const [pizzaAdedi, setPizzaAdedi] = useState(1)
+  const [responseData, setResponseData] = useState(null);
+  const history = useHistory()
 
   const handleChange = (event) => {
     const { value, checked } = event.target
@@ -44,13 +49,42 @@ export default function SiparisFormu() {
   const ekMalzemeTutari = ekMalzeme.length * urunFiyat
   const siparisTutari = (ekMalzemeTutari + pizzaFiyati) * pizzaAdedi
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const siparis = {
+      boyut,
+      hamur,
+      ekMalzeme,
+      not,
+      pizzaAdedi,
+      toplamTutar: siparisTutari,
+      secimTutari: ekMalzemeTutari,
+    };
+
+    axios
+      .post(
+        'https://reqres.in/api/pizza',
+        siparis,
+        {
+          headers: {
+            'x-api-key': 'reqres-free-v1'
+          }
+        }
+      )
+      .then((res) => {
+        console.log(res.data)
+        history.push('/alindi', res.data)
+
+      })
+      .catch(err => console.error(err))
+
+  };
+
   return (
     <>
       <SiparisHeader />
       <div className="formSayfasi">
-
-
-
         <h5 className="title">Position Absolute Acı Pizza</h5>
         <div className="ikili">
           <h3><strong>{pizzaFiyati}₺ </strong></h3>
@@ -64,7 +98,7 @@ export default function SiparisFormu() {
           odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı
           hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.</p>
 
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <div className="radio">
             <FormGroup tag="fieldset">
               <legend>
@@ -114,7 +148,7 @@ export default function SiparisFormu() {
                   Hamur Kalınlığı
                 </option>
                 <option>
-                 Süpper İnce
+                  Süpper İnce
                 </option>
                 <option>
                   İnce
@@ -171,7 +205,8 @@ export default function SiparisFormu() {
               <h5>Sipariş Toplamı</h5>
               <p>Seçimler: {ekMalzemeTutari}₺</p>
               <p style={{ color: 'red' }}>Toplam: {siparisTutari}₺</p>
-              <Button color="warning">Sipariş Ver</Button>
+              <Button type="submit" color="warning" ><strong>Sipariş Ver</strong></Button>
+
 
             </div>
           </div>
