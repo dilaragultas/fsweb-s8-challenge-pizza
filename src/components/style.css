@@ -363,8 +363,8 @@ body{
 
   .pizza{
     height: 15vh;
-    margin-bottom: 0px;
-    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-top: 10px;
     font-size: 50px;
     width: 50vw;
   }
@@ -391,10 +391,10 @@ body{
   }
 
   .hackathlon{
-    width: 90vw;
+    width: 95vw;
   }
   .cok{
-    width: 90vw;
+    width: 95vw;
   }
 
  .siparis{
@@ -409,6 +409,9 @@ body{
   margin-left: 30px;
  }
 
+ .ikili{
+  width: 95vw;
+ }
  .italik{
   width: 350px;
   font-size: 30px;
@@ -430,11 +433,10 @@ body{
   justify-content: center;
   width: 260px;
   margin: 0;
-  padding-right: 100px;
   }
 
   .shortcuts{
-    width: 80px;
+    width: 34vw;
     margin: 0;
   }
 
@@ -467,7 +469,7 @@ body{
     margin: 0;
   }
 
-
+  
 }
 
 

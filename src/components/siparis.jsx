@@ -186,8 +186,7 @@ const handleChangeuc = (event) => {
             {ekMalzemeListesi.map((elm) => {
               return (
                 <FormGroup
-                  check
-                  inline
+                  
                 >
 
                   <Label className="tektek" check>

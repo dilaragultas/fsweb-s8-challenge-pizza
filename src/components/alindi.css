@@ -72,3 +72,9 @@
     justify-content: space-between;
     font-family: 'Barlow';
 }
+
+@media (max-width: 768px){
+    .img{
+        width: 70vw;
+    }
+}

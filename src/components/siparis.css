@@ -131,3 +131,41 @@ width: 25vw;
 .siparisbutonu{
     width: 230px;
 }
+
+@media (max-width: 768px) {
+    .title{
+        width: 70vw;
+    }
+    .ikilisiparis{
+        width: 70vw;
+    }
+    .ilkMetin{
+        width: 70vw;
+    }
+    .radio{
+        width: 70vw;
+    }
+    .malzemeler{
+        width: 70vw;
+    }
+    .sonikili{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70vw;
+    }
+    .artazal{
+        width: 70vw;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+    .toplam{
+        width: 70vw;
+    }
+    .siparisbutonu{
+        width: 70vw;
+    }
+}
