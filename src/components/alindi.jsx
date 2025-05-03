@@ -18,7 +18,7 @@ export default function Alindi({ekMalzemeTutari, siparisTutari}) {
         <div className="logolu">
             <img className="img" src='./images/iteration-1-images/logo.svg'/>
             <div className="baslik">
-                <p className="italik">lezzetin yolda</p>
+                <p className="italikson">lezzetin yolda</p>
                 <h1 className="alindiBilgisi">SİPARİŞ ALINDI</h1>
             </div>
             <p className="pizzaAdi">Position Absolute Acı Pizza</p>

@@ -1,0 +1,482 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.anaHeader{
+  background-image: url("public/assets/iteration-1/home-banner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 130vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo{
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.firsat{
+  margin-bottom: 0px;
+  color: #FDC913;
+  font-size: 30px;
+  font-family: Satisfy;
+}
+
+.kod{
+  font-size: 80px;
+  font-family: "Roboto Condensed";
+  color: #FAF7F2;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-weight: 300;
+}
+
+.pizza{
+  font-size: 80px;
+  font-family: "Roboto Condensed";
+  color: #FAF7F2;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 300;
+}
+.btnaciktim{
+  border: none;
+  background-color: #FDC913;
+  padding: 10px 30px;
+  font-size: 15px;
+  border-radius: 25px;
+  margin-top: 20px;
+  font-family: Barlow;
+}
+
+.hizli-menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+
+.kisayol {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10px;
+  font-family: "Roboto Condensed";
+  gap: 5px;
+}
+
+.main-section{
+  background-color: #FAF7F2;
+  padding:80px;
+}
+.main-cards{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap:10px;
+  
+}
+
+.lezzetus{
+  background-image: url(public/assets/iteration-2/cta/kart-1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  height: 61vh;
+  width: 35vw;
+  border-radius: 15px;
+}
+
+.ikili{
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+}
+
+.ozel {
+  color: #FAF7F2;
+  font-family: "Quattrocento";
+  font-weight: 500;
+  margin-left: 40px;
+  margin-right: 30px;
+  font-size: 70px;
+  margin-bottom: 0px;
+  margin-top: 30px;
+}
+
+.aci {
+  color: #FAF7F2;
+  font-family: "Barlow";
+  margin-left: 40px;
+  margin-top: 0px;
+  font-weight: 600;
+}
+
+.hackathlon{
+  background-image: url(public/assets/iteration-2/cta/kart-2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  height: 30vh;
+  width: 35vw;
+  border-radius: 15px;  
+  font-size: 30px;
+  font-family: Barlow;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color:  #FAF7F2;
+}
+
+.cok{
+  background-image: url("public/assets/iteration-2/cta/kart-3.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  height: 30vh;
+  width: 35vw;
+  border-radius: 15px;
+  color: #292929;
+  padding-left: 20px;
+  font-size: 30px;
+  font-family: Barlow;
+  font-weight: 650;
+}
+
+
+.siparis{
+  border-radius: 50px;
+  text-align: center;
+  background-color: #FAF7F2;
+  color: #CE2829;
+  padding: 10px 10px;
+  font-size: 15px;
+  border-radius: 25px;
+  margin-top: 20px;
+  font-family: Barlow;
+  font-weight: 500;
+  font-family: "Roboto Condensed";
+  margin-right: 350px;
+  border: none;
+  margin-left: 30px;
+}
+.ara {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FAF7F2;
+}
+.italik{
+  color: #CE2829;
+  font-family: satisfy;
+  font-weight: 300;
+  font-size: 35px;
+  margin-top: 80px;
+}
+.kodlar{
+  color: #292929;
+  font-family: "Roboto Condensed";
+  font-weight: 600;
+  margin-top: 20px;
+  font-size: 50px;
+}
+.hizli-menu2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+
+.shortcuts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10px;
+  font-family: "Roboto Condensed";
+  gap: 5px;
+  border-radius: 35px;
+  margin: auto;
+  padding: 5px 25px;
+  background-color: white;
+}
+#siyah{
+  background-color:#292929;
+  color: white;
+}
+.ekrandakiler{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.pizza1{
+  background-color: white;
+  border-radius: 15px;
+  padding: 25px;
+}
+.pizza2{
+  background-color: white;
+  border-radius: 15px;
+  padding: 25px;
+}
+.burger{
+  background-color: white;
+  border-radius: 15px;
+  padding: 25px;
+}
+.still{
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Roboto Condensed";
+  color: #292929;
+  margin-bottom: 0;
+}
+.yanyana{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 0;
+}
+
+.footer-color{
+  background-color: #292929;
+}
+.son3lu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #FAF7F2;
+  font-family: Barlow;
+  border: none;
+  border-bottom: 1px solid #5F5F5F;
+  padding: 50px;
+}
+.iletisim{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  padding-top: 20px;
+}
+
+.konum{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.mail{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.tel{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.font{
+  font-weight: 400;
+}
+
+.instagram{
+  width: 400px;
+}
+
+.fotolar{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  
+}
+
+.son{
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 150px;
+  margin-right: 220px;
+}
+
+@media (max-width: 768px){
+
+  body{
+    min-width: 300px;
+    
+  }
+
+  header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    height: 110vh;
+  }
+
+  .firsat{
+    display: none;
+  }
+
+  .logo{
+    align-items: center;
+    height: 10vh;
+    width: 80vw; 
+    margin-bottom: 0px;
+  }
+  .kod{
+    height: 15vh;
+    font-size: 50px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 50vw;
+  }
+
+  .pizza{
+    height: 15vh;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 50px;
+    width: 50vw;
+  }
+
+  .hizli-menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    }
+
+  .kisayol{
+    width: 130px;
+  }  
+
+  .main-cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lezzetus{
+    width: 95vw;
+  }
+
+  .hackathlon{
+    width: 90vw;
+  }
+  .cok{
+    width: 90vw;
+  }
+
+ .siparis{
+  width: 120px;
+  margin-top: 0;
+  margin-left: 0;
+
+ }
+
+ #lezzetusb{
+  margin-top: 10px;
+  margin-left: 30px;
+ }
+
+ .italik{
+  width: 350px;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 40px;
+ }
+
+ .kodlar{
+  width: 330px;
+  text-align: center;
+ }
+
+ .hizli-menu2{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  margin: 0;
+  padding-right: 100px;
+  }
+
+  .shortcuts{
+    width: 80px;
+    margin: 0;
+  }
+
+  .ekrandakiler{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-color{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .son3lu{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .iletisim{
+    height: 300px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .son{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

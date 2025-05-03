@@ -4,7 +4,6 @@ import SiparisHeader from "./siparisheader";
 import "./siparis.css"
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import Alindi from "./alindi";
 
 const ekMalzemeListesi = [
   "Pepperoni", "Sosis", "Kanada Jambonu", "Tavuk Izgara",
@@ -88,7 +87,7 @@ const handleChangeuc = (event) => {
       <SiparisHeader />
       <div className="formSayfasi">
         <h5 className="title">Position Absolute Acı Pizza</h5>
-        <div className="ikili">
+        <div className="ikilisiparis">
           <h3><strong>85.50₺ </strong></h3>
           <div className="yildizveyorum">
             <p>4.9</p>
@@ -107,6 +106,9 @@ const handleChangeuc = (event) => {
                 <h5>Boyut Seç <span style={{ color: 'red' }}>*</span></h5>
               </legend>
               <FormGroup check>
+                
+                {' '}
+                <Label check>
                 <Input
                   name="radio1"
                   type="radio"
@@ -114,12 +116,13 @@ const handleChangeuc = (event) => {
                   checked={boyut==='Küçük'}
                   onChange={handleChangeiki}
                 />
-                {' '}
-                <Label check>
                   Küçük
                 </Label>
               </FormGroup>
               <FormGroup check>
+                
+                {' '}
+                <Label check>
                 <Input
                   name="radio1"
                   type="radio"
@@ -127,12 +130,13 @@ const handleChangeuc = (event) => {
                   checked={boyut==='Orta'}
                   onChange={handleChangeiki}
                 />
-                {' '}
-                <Label check>
                   Orta
                 </Label>
               </FormGroup>
               <FormGroup check>
+                
+                {' '}
+                <Label check>
                 <Input
                   name="radio1"
                   type="radio"
@@ -140,8 +144,6 @@ const handleChangeuc = (event) => {
                   checked={boyut==='Büyük'}
                   onChange={handleChangeiki}
                 />
-                {' '}
-                <Label check>
                   Büyük
                 </Label>
               </FormGroup>
