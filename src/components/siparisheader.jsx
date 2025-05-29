@@ -4,13 +4,13 @@ import styled from "styled-components"
 
 const StyledHeader = styled.header`
     background-color: #CE2829;
-    background-image: url('images/iteration-1-images/logo.svg');
+    background-image: url('/images/iteration-1-images/logo.svg');
     background-repeat: no-repeat;
     background-position: center;
     height: 20vh
     `
 
-    const StyledDiv= styled.div`
+const StyledDiv = styled.div`
 display:flex;
 flex-direction: row;
 justify-content: center;
@@ -32,11 +32,11 @@ export default function SiparisHeader() {
 
     return (
         <StyledHeader>
-        <StyledDiv>
-        <Link to='/' exact> <StyledButton>Anasayfa</StyledButton></Link>
-        -
-        <StyledButton>Sipariş Oluştur</StyledButton>
-        </StyledDiv>
+            <StyledDiv>
+                <Link to='/' exact> <StyledButton>Anasayfa</StyledButton></Link>
+                -
+                <StyledButton>Sipariş Oluştur</StyledButton>
+            </StyledDiv>
         </StyledHeader>
 
 
